@@ -18,7 +18,6 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	fmt.Printf("Сумма в рублях %d\n", rub)
 	convdollar := float64(rub) / dollar
 	conveuro := float64(rub) / euro
 	fmt.Printf("После обмена вы получите %.2f$ или евро %.2f€.\n", convdollar, conveuro)
