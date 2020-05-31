@@ -14,7 +14,7 @@ func main() {
 	fmt.Println("Какую сумму в рублях вы хотите обменять?")
 	summa := "10000"
 	fmt.Scanln(&summa)
-	rub, err := strconv.Atoi(summa)
+	7
 	if err != nil {
 		log.Fatalln(err)
 	}
