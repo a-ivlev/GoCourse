@@ -11,19 +11,19 @@ func main() {
 	fmt.Printf("Введите длину катета (a) прямоугольного треугольника\n")
 	lenLn := "0"
 	fmt.Scan(&lenLn)
-	lenInt, err := strconv.Atoi(lenLn)
+	katetA, err := strconv.ParseFloat(lenLn, 64)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	katetA := float64(lenInt)
+	//katetA := float64(lenInt)
 
 	fmt.Printf("Введите длину катета (b) прямоугольного треугольника\n")
 	fmt.Scanln(&lenLn)
-	lenInt, err = strconv.Atoi(lenLn)
+	katetB, err := strconv.ParseFloat(lenLn, 64)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	katetB := float64(lenInt)
+	//katetB := float64(lenInt)
 
 	areaTringle := 0.5 * katetA * katetB
 	fmt.Printf("Площадь данного треугольника равняется %.2f\n", areaTringle)
