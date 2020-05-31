@@ -29,8 +29,9 @@ func main() {
 		log.Fatalln(err)
 	}
 
+	fmt.Printf("Посмотрите как будет расти ваш вклад:\n")
 	for kolLet := 1; kolLet <= numbeYear; kolLet++ {
 		deposit += deposit * procent / 100.00
-		fmt.Printf("Через %d год размер вашего вклада составит %.2f рублей.\n", kolLet, deposit)
+		fmt.Printf("%d год размер вашего вклада составит %.2f рублей.\n", kolLet, deposit)
 	}
 }
