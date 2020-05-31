@@ -7,32 +7,35 @@ import (
 	"strconv"
 )
 
-var katetA int = 0
-var katetB int = 0
-var lenght string = "0"
+var katetA float64 = 0
+var katetB float64 = 0
+var lenLn string = "0"
+var lenInt int = 0
 var hypotenuse float64 = 0
 var areaTringle float64 = 0
 var perimetr float64 = 0
 
 func main() {
 	fmt.Printf("Введите длину катета (a) прямоугольного треугольника\n")
-	fmt.Scanf("%.f", &lenght)
-	katetA, err := strconv.Atoi(lenght)
+	fmt.Scan(&lenLn)
+	lenInt, err := strconv.Atoi(lenLn)
 	if err != nil {
 		log.Fatalln(err)
 	}
+	katetA = float64(lenInt)
 	fmt.Printf("Введите длину катета (b) прямоугольного треугольника\n")
-	fmt.Scanf("%.f", &lenght)
-	katetB, err := strconv.Atoi(lenght)
+	fmt.Scanln(&lenLn)
+	lenInt, err = strconv.Atoi(lenLn)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	areaTringle = 0.5 * float64(katetA) * float64(katetB)
-	fmt.Printf("Площадь данного треугольника равняется %.f\n", areaTringle)
+	katetB = float64(lenInt)
+	areaTringle = 0.5 * katetA * katetB
+	fmt.Printf("Площадь данного треугольника равняется %.2f\n", areaTringle)
 
-	hypotenuse = math.Sqrt(math.Pow(float64(katetA), 2) + math.Pow(float64(katetB), 2))
-	fmt.Printf("Гипотенуза данного прямоугольного треугольника равна %.f\n", hypotenuse)
+	hypotenuse = math.Sqrt(math.Pow(katetA, 2) + math.Pow(katetB, 2))
+	fmt.Printf("Гипотенуза данного прямоугольного треугольника равна %.2f\n", hypotenuse)
 
-	perimetr = float64(katetA) + float64(katetB) + hypotenuse
-	fmt.Printf("Периметр данного треугольника составляет %.f\n", perimetr)
+	perimetr = katetA + katetB + hypotenuse
+	fmt.Printf("Периметр данного треугольника составляет %.2f\n", perimetr)
 }
