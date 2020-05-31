@@ -14,11 +14,11 @@ func main() {
 	fmt.Println("Какую сумму в рублях вы хотите обменять?")
 	summa := "10000"
 	fmt.Scanln(&summa)
-	rub, err := strconv.Atoi(summa)
+	rub, err := strconv.ParseFloat(summa, 64)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	convdollar := float64(rub) / dollar
-	conveuro := float64(rub) / euro
+	convdollar := rub / dollar
+	conveuro := rub / euro
 	fmt.Printf("После обмена вы получите %.2f$ или евро %.2f€.\n", convdollar, conveuro)
 }
