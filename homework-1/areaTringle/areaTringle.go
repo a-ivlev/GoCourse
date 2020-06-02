@@ -1,4 +1,4 @@
-package AreaTringle
+package areaTringle
 
 import (
 	"fmt"
@@ -8,7 +8,6 @@ import (
 )
 
 // Функция считает площадь, периметр и гипотенузу прямоугольного треугольника.
-
 func AreaTringle() {
 
 	katetA := mypackage.UserInputFloat("Введите длину катета (a) прямоугольного треугольника")

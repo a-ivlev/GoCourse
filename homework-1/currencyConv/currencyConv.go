@@ -1,4 +1,4 @@
-package CurrencyConv
+package currencyConv
 
 import (
 	"fmt"
