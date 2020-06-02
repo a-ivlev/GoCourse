@@ -1,27 +1,18 @@
-package main
+package AreaTringle
 
 import (
 	"fmt"
-	"log"
 	"math"
-	"strconv"
+
+	"github.com/GoCourse/mypackage"
 )
 
-func main() {
-	fmt.Printf("Введите длину катета (a) прямоугольного треугольника\n")
-	lenLn := "0"
-	fmt.Scan(&lenLn)
-	katetA, err := strconv.ParseFloat(lenLn, 64)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	
-	fmt.Printf("Введите длину катета (b) прямоугольного треугольника\n")
-	fmt.Scanln(&lenLn)
-	katetB, err := strconv.ParseFloat(lenLn, 64)
-	if err != nil {
-		log.Fatalln(err)
-	}
+// Функция считает площадь, периметр и гипотенузу прямоугольного треугольника.
+
+func AreaTringle() {
+
+	katetA := mypackage.UserInputFloat("Введите длину катета (a) прямоугольного треугольника")
+	katetB := mypackage.UserInputFloat("Введите длину катета (b) прямоугольного треугольника")
 
 	areaTringle := 0.5 * katetA * katetB
 	fmt.Printf("Площадь данного треугольника равняется %.2f\n", areaTringle)
