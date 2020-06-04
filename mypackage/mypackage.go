@@ -24,12 +24,12 @@ func UserInputFloat(msg string) (useInputFloat float64) {
 		//return errors.New("Вы ввели не число, введите число!!!")
 		log.Fatalln(err)
 	}
-	return useInputFloat
+	return
 }
 
 // Функция чтения целых чисел введёных пользователем с клавиатуры. Нужно допилить работу с ошибками.
 // Данная функция получает на вход строку которую нужно вывести перед тем как она считает число которое введёт пользователь.
-func UserInputInt(msg string) (useInputUint int) {
+func UserInputInt(msg string) (useInputInt int) {
 
 	fmt.Println(msg)
 	fmt.Scan(&useInput)
@@ -38,5 +38,5 @@ func UserInputInt(msg string) (useInputUint int) {
 		//return errors.New("Вы ввели не число, введите число!!!")
 		log.Fatalln(err)
 	}
-	return useInputInt
+	return
 }
