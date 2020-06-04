@@ -6,7 +6,7 @@ import (
 	"github.com/GoCourse/mypackage"
 )
 
-// EvenNumber() эта функция определяет введено четное число или нечётное.
+// EvenNumber функция определяет введено число чётное или нечётное.
 func EvenNumber() {
 
 	number := mypackage.UserInputInt("Введите число которое хотите проверить чётное оно или нет?")

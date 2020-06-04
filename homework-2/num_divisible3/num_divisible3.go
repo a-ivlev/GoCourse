@@ -6,7 +6,7 @@ import (
 	"github.com/GoCourse/mypackage"
 )
 
-// Функция которая определяет четное ли число.
+// NumDivisible3 функция проверяет делится число на 3 или нет.
 func NumDivisible3() {
 
 	number := mypackage.UserInputInt("Введите число которое хотите проверить делится оно на 3 или нет?")
