@@ -6,6 +6,7 @@ import (
 	"github.com/GoCourse/mypackage"
 )
 
+// BankDeposit функция производит расчёт суммы вклада и процентов по нему.
 func BankDeposit() {
 
 	deposit := mypackage.UserInputFloat("Введите сумму в рублях на которую вы хотите открыть вклад:\n")
