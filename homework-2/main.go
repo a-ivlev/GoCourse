@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-
 	fmt.Println("1. Функция определяет чётное число или нечётное.\n")
 	even_number.EvenNumber()
 
