@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-
+	fmt.Println("")
 	queue.Push("Этот текст", "Будет находиться в очереди", "До первого обращения к pop")
 	n := 1
 	for i :=0; i < n; i++{
