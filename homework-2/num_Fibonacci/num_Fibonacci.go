@@ -20,7 +20,5 @@ func Numfibonaci() {
 		// Можно сократить до такой записи.
 		fmt.Printf("%d %.f\n", i+1, fib1)
 		fib1, fib2 = fib2, fib1+fib2
-
 	}
-
 }
