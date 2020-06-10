@@ -11,6 +11,7 @@ var (
 	Name string
 	Phone int
 	reply string
+	selec int
 )
 
 const fileName = "./AddresBook.json"
@@ -40,15 +41,10 @@ func SavePhone()  {
 // DelPhone удаляет введённый контакт из адресной книги.
 func DelPhone()  {
 	for {
-			fmt.Println("Введите Имя контакта который хотите удалить")
-			fmt.Scanln(&Name)
-			/*for name, phone := range AddresList {
-				if Name == name {
-					fmt.Println("Абонент: ", name, phone)
-				}
-				fmt.Printf("Абонент: %v не найден!", Name)
-				return
-			}*/
+		fmt.Println("Введите Имя контакта который хотите удалить")
+		fmt.Scanln(&Name)
+		_, ok := AddresList[Name]
+		if ok {
 			fmt.Printf("Вы действительно хотите удалить %v ? Y/N ", Name)
 			fmt.Scan(&reply)
 			if reply == "y" || reply == "Y" || reply == "д" || reply == "Д" {
@@ -56,11 +52,14 @@ func DelPhone()  {
 				PrintListPhone()
 				SaveJson()
 				return
+			}
+			if reply == "n" || reply == "N" || reply == "н" || reply == "Н" {
+				PrintListPhone()
+				return
+			}
 		}
-		if reply == "n" || reply == "N" || reply == "н" || reply == "Н" {
-			PrintListPhone()
-			return
-		}
+		fmt.Printf("Абонент: %v не найден!\n", Name)
+		return
 	}
 }
 
@@ -68,7 +67,7 @@ func DelPhone()  {
 func PrintListPhone()  {
 	fmt.Println("Телефонный справочник")
 	for name, phone := range AddresList {
-		fmt.Println("Абонент: ", name, phone)
+		fmt.Printf("Абонент: %v  %v\n", name, phone)
 	}
 }
 
@@ -101,23 +100,33 @@ func LoadfromJson()  {
 	PrintListPhone()
 }
 
-// AddresBook Добавляет новые контакты, вывести на экран и сохранить телефонный справочник.
+// AddresBook позволяет выбрать действие которое мы хотим совершить с телефонным справочником.
 func AddresBook() {
-	// Заготовленный список контактов.
-/*	AddresList["Alexey"] = 7900047372
-	AddresList["Ivan"] = 7432637482
-	AddresList["Bob"] = 79003214546
-	AddresList["Bob"] = 79003210046*/
+	for {
+		fmt.Println("Выберите действие:")
+		fmt.Println("1 Загрузить телефонную книгу из json файла.")
+		fmt.Println("2 Записать телефон.")
+		fmt.Println("3 Удалить телефон.")
+		fmt.Println("4 Сохранить телефонную книгу в json файл.")
+		fmt.Println("5 Печать телефонной книги.")
+		fmt.Println("0 Выход из программы.")
 
-
-	LoadfromJson()
-	DelPhone()
-	//PrintListPhone()
-	//SavePhone()
-	//SaveJson()
+		fmt.Scan(&selec)
+		switch selec {
+		case 1:
+			LoadfromJson()
+		case 2:
+			SavePhone()
+		case 3:
+			DelPhone()
+		case 4:
+			SaveJson()
+		case 5:
+			PrintListPhone()
+		case 0:
+			return
+		}
+	}
 }
-
-
-
 
 
