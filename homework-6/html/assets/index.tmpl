@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>{{ .Head }}</head>
+<br>
+<p>Hello {{ .Name }}</p>
+</br>
+<p>You have {{ .ProductsCount }}</p>
+<ul>
+    {{ range $product .Products }}
+    <li>{{ $product.Name }}</li>
+    {{ end }}
+</ul>
+</body>
