@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/GoCourse/homework-6/line_img"
+	"github.com/GoCourse/homework-6/statistic"
 	"github.com/GoCourse/homework-6/сhess_board"
 )
 
@@ -19,7 +20,8 @@ func main()  {
 		fmt.Scan(&task)
 		switch task {
 		case 1:
-
+			fmt.Println("Функция подсчёта суммы переданных элементов. Передали 1, 2, 3, 4, 5, 6")
+			fmt.Println("Получили: ", statistic.SumArg([]float64{1,2,3,4,5,6}))
 		case 2:
 			line_img.LineImg()
 		case 3:
