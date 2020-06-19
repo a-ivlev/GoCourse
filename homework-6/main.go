@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	server "github.com/GoCourse/homework-6/html"
 	"github.com/GoCourse/homework-6/line_img"
 	"github.com/GoCourse/homework-6/statistic"
 	"github.com/GoCourse/homework-6/сhess_board"
@@ -25,7 +26,7 @@ func main()  {
 		case 2:
 			line_img.LineImg()
 		case 3:
-			//Calculat()
+			server.ServerGo()
 		case 5:
 			chess_board.ChessBoard()
 		case 0:
