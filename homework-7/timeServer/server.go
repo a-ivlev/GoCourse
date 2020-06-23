@@ -9,9 +9,7 @@ import (
 )
 
 func main() {
-
-	go ListenerConn()
-
+	go listenerConn()
 	userInput := ""
 	fmt.Println("Для завершения работы сервера наберите exit")
 	fmt.Scanln(&userInput)
@@ -31,8 +29,7 @@ func handleConn(c net.Conn) {
 	}
 }
 
-func ListenerConn()  {
-
+func listenerConn()  {
 	listener, err := net.Listen("tcp", "localhost:8000")
 	if err != nil {
 		log.Fatal(err)
