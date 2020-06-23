@@ -26,11 +26,7 @@ func main() {
 	}()
 
 	// печать
-	for {
-		res, ok := <-squares
-		if !ok {
-			break // канал закрыт и пуст
-		}
+	for res := range squares {
 		fmt.Println(res)
 	}
 }

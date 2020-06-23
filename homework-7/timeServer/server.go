@@ -9,24 +9,14 @@ import (
 )
 
 func main() {
-	listener, err := net.Listen("tcp", "localhost:8000")
-	if err != nil {
-		log.Fatal(err)
-	}
-	for {
-		conn, err := listener.Accept()
-		if err != nil {
-			log.Print(err)
-			continue
-		}
-		go handleConn(conn)
 
-		userInput := ""
-		fmt.Println("Для завершения работы сервера наберите exit")
-		fmt.Scan(&userInput)
-		if userInput == "exit" {
-			break
-		}
+	go ListenerConn()
+
+	userInput := ""
+	fmt.Println("Для завершения работы сервера наберите exit")
+	fmt.Scanln(&userInput)
+	if userInput == "exit" {
+		return
 	}
 }
 
@@ -38,5 +28,21 @@ func handleConn(c net.Conn) {
 			return
 		}
 		time.Sleep(1 * time.Second)
+	}
+}
+
+func ListenerConn()  {
+
+	listener, err := net.Listen("tcp", "localhost:8000")
+	if err != nil {
+		log.Fatal(err)
+	}
+	for {
+		conn, err := listener.Accept()
+		if err != nil {
+			log.Print(err)
+			continue
+		}
+		go handleConn(conn)
 	}
 }
